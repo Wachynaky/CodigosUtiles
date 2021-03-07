@@ -1,3 +1,5 @@
+//ABBRIR CONSOLA DEL NAVEGADOR Y PEGAR
+//Abrirá una pestaña nueva con una tabla dónde estarán todos los enalaces y sus textos de enlace.
 var x = document.querySelectorAll("a");
 var MiArray = []
 for (var i=0; i<x.length; i++){
