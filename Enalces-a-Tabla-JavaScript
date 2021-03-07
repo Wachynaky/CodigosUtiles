@@ -1,0 +1,18 @@
+var x = document.querySelectorAll("a");
+var MiArray = []
+for (var i=0; i<x.length; i++){
+var textoEnlace = x[i].textContent;
+var textoLimpio = textoEnlace.replace(/\s+/g, ' ').trim();
+var cleanlink = x[i].href;
+MiArray.push([textoLimpio,cleanlink]);
+};
+function creaTabla() {
+    var tabla = '<table><thead><th>Name</th><th>Links</th></thead><tbody>';
+   for (var i=0; i<MiArray.length; i++) {
+            tabla += '<tr><td>'+ MiArray[i][0] + '</td><td>'+MiArray[i][1]+'</td></tr>';
+    };
+    tabla += '</table>';
+    var w = window.open("");
+w.document.write(tabla); 
+}
+creaTabla();
