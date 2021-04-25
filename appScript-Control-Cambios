@@ -1,3 +1,32 @@
+function coreWebVitals() {
+  const urls = getUrls();
+  for (let u = 0; u < urls.length; u++) {
+    const { name, url,comprobar} = urls[u];
+   if (comprobar=="Robots.txt"){
+      var response = obtenerRobots(url);
+      if (response !== null) {
+        datos =[[name],[response.getContentText()]];
+        writeDataToSheet("Robots - "+name, datos);
+        comparaFechas("Robots - "+name);
+      }
+   }
+  }
+  SpreadsheetApp.flush();
+}
+function getUrls() {
+  const data = SpreadsheetApp.getActiveSpreadsheet()
+    .getSheetByName("Dominios")
+    .getDataRange()
+    .getDisplayValues()
+    .map(([url, name,comprobar]) => ({ url, name,comprobar}))
+    .filter(({ url }) => /^http/i.test(url));
+  return data;
+}
+function obtenerRobots(url){
+  var response = UrlFetchApp.fetch(url);
+  return response;
+}
+
 function writeDataToSheet(name, data) {
   const ss = SpreadsheetApp.getActiveSpreadsheet();
   const sheet =
@@ -8,7 +37,6 @@ function writeDataToSheet(name, data) {
   sheet
     .getRange(1, sheet.getLastColumn() + 1, 2 , 1)
     .setValues([[new Date()],[data.toString()]]);
-  comparaFechas(name);
 }
 function comparaFechas(name){
   const sheet =  SpreadsheetApp.getActiveSpreadsheet().getSheetByName(name);
@@ -38,37 +66,11 @@ function comparaFechas(name){
   {
     console.log("NO coinciden");
     var emailAddress = "wachynaky@gmail.com"; // First column
-    var message = "Cambios en línea:"+i+" \n Fecha ayer:"+fechaAyer+" \n Fecha hoy:"+fechaHoy; // Second column
+    var message = "Cambios el día "+fechaAyer+" en la línea:"+i+" \n Contenido:\n"+txtDatosAyer[i]+" \n \n Contenido del día:"+fechaHoy+"\n"+txtDatosHoy[i]; // Second column
     var subject = 'Cambios del robots.txt en '+name;
     MailApp.sendEmail(emailAddress, subject, message);
 
   }
 }
-function getUrls() {
-  const data = SpreadsheetApp.getActiveSpreadsheet()
-    .getSheetByName("Dominios")
-    .getDataRange()
-    .getDisplayValues()
-    .map(([url, name,comprobar]) => ({ url, name,comprobar}))
-    .filter(({ url }) => /^http/i.test(url));
-  return data;
-}
-function obtenerRobots(url){
-  var response = UrlFetchApp.fetch(url);
-  return response;
-}
 
-function coreWebVitals() {
-  const urls = getUrls();
-  for (let u = 0; u < urls.length; u++) {
-    const { name, url,comprobar} = urls[u];
-   if (comprobar=="Robots.txt"){
-      var response = obtenerRobots(url);
-      if (response !== null) {
-        datos =[[name],[response.getContentText()]];
-        writeDataToSheet("Robots - "+name, datos);
-      }
-   }
-  }
-  SpreadsheetApp.flush();
-}
+
