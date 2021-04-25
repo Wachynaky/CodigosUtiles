@@ -49,23 +49,26 @@ function getUrls() {
     .getSheetByName("Dominios")
     .getDataRange()
     .getDisplayValues()
-    .map(([url, name]) => ({ url, name }))
+    .map(([url, name,comprobar]) => ({ url, name,comprobar}))
     .filter(({ url }) => /^http/i.test(url));
   return data;
 }
-
+function obtenerRobots(url){
+  var response = UrlFetchApp.fetch(url);
+  return response;
+}
 
 function coreWebVitals() {
   const urls = getUrls();
   for (let u = 0; u < urls.length; u++) {
-    const { name, url } = urls[u];
-   
-   var response = UrlFetchApp.fetch(url);
-    if (response !== null) {
-      var response = UrlFetchApp.fetch(url);
-       datos =[[name],[response.getContentText()]];
-      writeDataToSheet(name, datos);
-    }
+    const { name, url,comprobar} = urls[u];
+   if (comprobar=="Robots.txt"){
+      var response = obtenerRobots(url);
+      if (response !== null) {
+        datos =[[name],[response.getContentText()]];
+        writeDataToSheet("Robots - "+name, datos);
+      }
+   }
   }
   SpreadsheetApp.flush();
 }
