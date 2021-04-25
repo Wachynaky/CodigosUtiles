@@ -50,27 +50,20 @@ function comparaFechas(name){
 
   txtDatosHoy=datosHoy.split("\n");
   txtDatosAyer=datosAyer.split("\n");
-  let sw=0;
-  for (i=1;i<txtDatosHoy.length;i++){
-    if (txtDatosHoy[i]!=txtDatosAyer[i] && sw==0){
-      sw=1;
-    }
-  if (sw==1)
-    {
-      sw=0;
-      break;
-    }
-  }
-  
-  if (datosAyer!=datosHoy)
-  {
-    console.log("NO coinciden");
+  removeCommon = (txtDatosHoy, txtDatosAyer) => {
+   const spreaded = [...txtDatosHoy, ...txtDatosAyer];
+   return spreaded.filter(el => {
+      return !(txtDatosHoy.includes(el) && txtDatosAyer.includes(el));
+   })
+};
+let diferencia =[];
+diferencia=removeCommon(txtDatosHoy, txtDatosAyer);
+if (diferencia.length!=0){
     var emailAddress = "wachynaky@gmail.com"; // First column
-    var message = "Cambios el día "+fechaAyer+" en la línea:"+i+" \n Contenido:\n"+txtDatosAyer[i]+" \n \n Contenido del día:"+fechaHoy+"\n"+txtDatosHoy[i]; // Second column
+    var message = "Cambios el día "+fechaAyer+" \n Contenido:\n"+diferencia; // Second column
     var subject = 'Cambios del robots.txt en '+name;
-    MailApp.sendEmail(emailAddress, subject, message);
+    MailApp.sendEmail(emailAddress, subject, message.replace(new RegExp(",", "gi"), "\r\n"));
 
-  }
 }
 
-
+}
