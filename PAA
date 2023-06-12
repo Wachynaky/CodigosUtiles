@@ -1,8 +1,11 @@
 var preguntas=[]
+var respuestas=[]
 function iniciar(){
     for(i=0;i<$x('//div[@data-lk]').length;i++){
     $x('//div[@data-lk]')[i].parentElement.firstChild.firstChild.childNodes[1].firstChild.click();
     preguntas.push($x('//div[@data-lk]')[i].parentElement.firstChild.firstChild.childNodes[1].firstChild.textContent);
-        console.log(preguntas)
+    respuestas.push($x('//div[@data-lk]')[i].parentElement.firstChild.firstChild.childNodes[2].firstChild.textContent);
+        console.log("PREGUNTAS:",preguntas);
+        console.log("respuestas:",respuestas);
 }}
 iniciar();
