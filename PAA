@@ -1,0 +1,8 @@
+var preguntas=[]
+function iniciar(){
+    for(i=0;i<$x('//div[@data-lk]').length;i++){
+    $x('//div[@data-lk]')[i].parentElement.firstChild.firstChild.childNodes[1].firstChild.click();
+    preguntas.push($x('//div[@data-lk]')[i].parentElement.firstChild.firstChild.childNodes[1].firstChild.textContent);
+        console.log(preguntas)
+}}
+iniciar();
