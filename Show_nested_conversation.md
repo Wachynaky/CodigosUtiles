@@ -1,5 +1,4 @@
--#a
-aThis script enhances your browsing experience by automatically expanding all nested conversations within a thread. No more clicking on hidden replies – view the entire conversation seamlessly.
+This script enhances your browsing experience by automatically expanding all nested conversations within a thread. No more clicking on hidden replies – view the entire conversation seamlessly.
 
 1- Copy this code 
   
