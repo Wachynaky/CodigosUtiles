@@ -1,6 +1,8 @@
-This script enhances your browsing experience by automatically expanding all nested conversations within a thread. No more clicking on hidden replies – view the entire conversation seamlessly.
+-#a
+aThis script enhances your browsing experience by automatically expanding all nested conversations within a thread. No more clicking on hidden replies – view the entire conversation seamlessly.
 
 1- Copy this code 
+  
   "javascript:!function(){if (typeof document.querySelectorAll('.scTailwindThreadMessagegapload-all')[0] !== 'undefined'){document.querySelectorAll('.scTailwindThreadMessagegapload-all')[0].firstElementChild.click()};document.querySelectorAll('.scTailwindThreadMessagegapmore-nested-replies:first-of-type button').forEach((e)=> {e.click();});if (document.querySelectorAll('.scTailwindThreadMessagegapmore-nested-replies:first-of-type button').length>0){document.querySelectorAll('.scTailwindThreadMessagegapmore-nested-replies:first-of-type button').forEach((e)=> {e.click();});}}();"
 
 2- Create new bookmart and paste the code en "url" field.
