@@ -1,0 +1,11 @@
+# convierte de texto a voz en Español de manera eficaz
+
+curl https://api.openai.com/v1/audio/speech \
+  -H "Authorization: Bearer APIKEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "model": "tts-1",
+    "input": "El otro día realicé una presentación en el Seonthebeach (el mejor evento SEO en mi opinión), que podemos dividir en dos partes. ",
+    "voice": "alloy"
+  }' \
+  --output datos/ejemplo-salida-texto-a-voz.mp3
