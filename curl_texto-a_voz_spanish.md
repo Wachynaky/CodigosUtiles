@@ -1,6 +1,6 @@
 # Conversión de Texto a Voz en Español 
 
-Cpmando que llama a la API de audio de OpenAI y pasa el texto a voz en español
+Comando que llama a la API de audio de OpenAI y pasa el texto a voz en español
 
 Se ejecuta desde la línea de comandos 
 
