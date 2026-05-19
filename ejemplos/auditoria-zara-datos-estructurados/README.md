@@ -1438,7 +1438,7 @@ Referencias: [Ver documentación completa (local)](recursos/referencia-google/es
 - ✓ Aparece en: `resultado` (1/10)
 - ✗ NO aparece (rich snippets accionables): `imagenes` → *Image pack* (schema requerido: `ImageObject, Product.image`)
 
-![SERP vestidos de fiesta](.recursos/imagenes/snapshots/serp-vestidos-de-fiesta-2026-05-19_09-54-55.png)
+![SERP vestidos de fiesta](.recursos/imagenes/serp-vestidos-de-fiesta-2026-05-19_09-54-55.png)
 
 </details>
 <!-- marcado-post:close -->
@@ -1488,7 +1488,7 @@ Referencias: [Ver documentación completa (local)](recursos/referencia-google/es
 - ✓ Aparece en: `resultado` (1/10)
 - ✗ NO aparece (rich snippets accionables): `Listado de productos` → *Carrusel de productos / Shopping* (schema requerido: `Product, ItemList`); `imagenes` → *Image pack* (schema requerido: `ImageObject, Product.image`)
 
-![SERP vestidos de fiesta mujer](.recursos/imagenes/snapshots/serp-vestidos-de-fiesta-mujer-2026-05-19_09-54-55.png)
+![SERP vestidos de fiesta mujer](.recursos/imagenes/serp-vestidos-de-fiesta-mujer-2026-05-19_09-54-55.png)
 
 </details>
 <!-- marcado-post:close -->
@@ -1541,7 +1541,7 @@ Referencias: [Ver documentación completa (local)](recursos/referencia-google/es
 **Presencia del target en esta SERP:**
 - ✗ NO aparece (rich snippets accionables): `imagenes` → *Image pack* (schema requerido: `ImageObject, Product.image`); `Listado de productos` → *Carrusel de productos / Shopping* (schema requerido: `Product, ItemList`)
 
-![SERP vestidos negros fiesta](.recursos/imagenes/snapshots/serp-vestidos-negros-fiesta-2026-05-19_09-54-55.png)
+![SERP vestidos negros fiesta](.recursos/imagenes/serp-vestidos-negros-fiesta-2026-05-19_09-54-55.png)
 
 </details>
 <!-- marcado-post:close -->
