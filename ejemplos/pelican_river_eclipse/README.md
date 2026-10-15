@@ -31,4 +31,4 @@ La composición está diseñada para 16:10 sobre un lienzo de 1600 x 1000; otras
 
 ## Origen
 
-Generado con Codex el 15 de octubre de 2026 sobre una copia del proyecto [RayTracer, un trazador de rayos en ClickHouse SQL](https://github.com/ClickHouse/NoiSQL). Verificado con ClickHouse local 26.9.19.9. El fichero SQL de este directorio es exactamente el que produce `gen_pelican.py`.
+Generado con Codex el 15 de octubre de 2026 sobre una copia del proyecto RayTracer (un trazador de rayos escrito en ClickHouse SQL, licencia CC BY-NC-SA 4.0). Verificado con ClickHouse local 26.9.19.9. El fichero SQL de este directorio es exactamente el que produce `gen_pelican.py`.
